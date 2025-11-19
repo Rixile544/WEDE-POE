@@ -1,55 +1,59 @@
+README — Luna Café Website
 1. Project Overview
 
-Café Lumière is a warm, elegant café website designed to showcase the brand’s ambience, menu, and identity.
-This Web Development POE demonstrates practical front-end skills through a responsive, user-friendly site that blends modern coding techniques with timeless design principles.
+The Luna Café website is a polished, responsive web project developed as part of the Web Development POE.
+The aim is to present Luna Café’s brand, menu, and ambience through a user-friendly interface that blends modern web standards with a timeless, classic café aesthetic.
+The site highlights solid front-end development skills while maintaining a clean and cohesive visual identity.
 
 2. Features
 
-Fully responsive design
+Fully responsive layout (mobile → desktop)
 
-Menu page with clear layout
+Menu page featuring key offerings
 
-About page expressing the café’s story
+About page with the café’s story and values
 
-Contact/booking form with basic validation
+Contact page with an inquiry/booking form
 
-Smooth navigation with JavaScript interactions
+JavaScript-enabled interactions and smooth navigation
 
-Consistent colour palette and typography inspired by Café Lumière’s identity
+Consistent styling aligned with the Luna Café brand: warm tones, simple elegance, clear readability
 
 3. Technologies Used
 
-HTML5
+HTML5 for semantic structure
 
-CSS3 (Flexbox, Grid, media queries)
+CSS3 for styling (Flexbox, Grid, media queries)
 
-JavaScript (ES6)
+JavaScript (ES6) for dynamic behaviour
+
+Optional enhancements: custom fonts, scroll animations, icons
 
 4. Installation Instructions
 
-Download or clone the repository:
+Clone or download the repository:
 
-git clone <your-repo-link>
+git clone <your-repository-link>
 
 
-Open the project folder
+Open the folder in your editor.
 
-Open index.html in any browser
+Run index.html in any browser.
 
-Optional: Use VS Code Live Server for live preview
+Optional: Use VS Code Live Server for real-time preview.
 
 5. How to Use the Website
 
-Use the navigation bar to move through pages
+Navigate through the pages using the top navigation bar.
 
-View the menu, explore the gallery, and read about the café
+Browse the menu, read about Luna Café, and view images of the space.
 
-Submit booking/inquiry details through the contact form
+Use the contact form to send inquiries or booking requests.
 
-The layout adapts automatically to any screen size
+The website automatically adapts to any device or screen size.
 
 6. Project Structure
-cafe-lumiere/
+luna-cafe/
 │── index.html
 │── menu.html
 │── about.html
@@ -65,35 +69,37 @@ cafe-lumiere/
 
 7. Known Issues / Limitations
 
-Form submissions require backend integration for full functionality
+Form submissions only operate on the front-end without a backend.
 
-Heavy images may load slower on low-end devices
+Large images may load slower on low-end devices.
 
-Minor animation differences across browsers
+Small animation inconsistencies may occur across different browsers.
 
 8. Future Improvements
 
-Add online ordering/reservations
+Add online table reservations
 
-Add database-driven dynamic menu
+Add customer testimonials
+
+Connect to a backend for dynamic menu updates
 
 Improve accessibility features
 
-Include customer reviews/testimonials
+Add subtle animations for better user engagement
 
 9. Changelog
 
-Version 1.0 — Initial Build
+Version 1.0 — Initial Release
 
-Full website structure created
+Built all website pages
 
-Responsive design implemented
+Implemented full responsive design
 
-Menu and gallery added
+Added menu and contact functionality
 
-JavaScript interactions completed
+Styled interface according to Luna Café’s branding
 
-Branding applied (typography + colour palette)
+Added JavaScript-based interactions
 
 References (Harvard Anglia Style)
 
@@ -106,7 +112,8 @@ FreeCodeCamp. (2023) Responsive Web Design Certification. Available at: https://
 MDN Web Docs. (2024) CSS: Cascading Style Sheets. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS
  (Accessed: 19 November 2025).
 
-MDN Web Docs. (2024) JavaScript Guide. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+MDN Web Docs. (2024) JavaScript Guide. Available at:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
  (Accessed: 19 November 2025).
 
 W3Schools. (2024) HTML Tutorial. Available at: https://www.w3schools.com/html/
