@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Luna Café — Enquiry</title>
+  <meta name="description" content="Send an enquiry about bookings, volunteering, sponsorship or catering.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-bar">Welcome to Luna Café</div>
+  <header>
+    <nav>
+      <div class="logo">Luna Café</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="enquiry.html" class="active">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="cart.html" class="cart-link"><span>Cart</span><span class="cart-badge">0</span></a>
+        <div class="hamburger">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header text-center">
+      <h1>Make an Enquiry</h1>
+      <p class="small">Whether you want to book a table, collaborate, or enquire about sponsorship — tell us more.</p>
+    </section>
+
+    <section class="form-section">
+      <form id="enquiry-form" data-endpoint="">
+        <label>Full Name</label>
+        <input name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Type of Enquiry</label>
+        <select name="type">
+          <option>Booking</option>
+          <option>Event / Catering</option>
+          <option>Volunteer / Sponsor</option>
+          <option>Other</option>
+        </select>
+
+        <label>Details</label>
+        <textarea name="message" rows="6" required></textarea>
+
+        <button type="submit">Submit Enquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Luna Café | Let’s stay connected</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

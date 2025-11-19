@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Luna Café — Services</title>
+  <meta name="description" content="Luna Café services: dine-in, takeaway, catering, specials and workshops.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Vertical stacking for service cards */
+    .services-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .service-card {
+      background-color: #f8f4ef;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 20px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #4b2e05;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    h3 {
+      color: #3b2410;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #4b3a28;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    body {
+      background-color: #fcf8f2;
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">Welcome to Luna Café</div>
+  <header>
+    <nav>
+      <div class="logo">Luna Café</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="cart.html" class="cart-link"><span>Cart</span><span class="cart-badge">0</span></a>
+        <div class="hamburger">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="images/dine in.jpg" alt="Dine in" loading="lazy" class="lightbox-img">
+          <h3>Dine-In</h3>
+          <p>Relax and unwind in our cozy, earthy-toned café — perfect for conversations and comfort.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/takeaway.jpg" alt="Takeaway" loading="lazy" class="lightbox-img">
+          <h3>Takeaway & Delivery</h3>
+          <p>Enjoy Luna Café wherever you are. Quick pickups and efficient delivery, fresh every time.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/coffee catering.jpg" alt="Catering" loading="lazy" class="lightbox-img">
+          <h3>Catering</h3>
+          <p>We cater for intimate gatherings, events, and special occasions with wholesome flavors.</p>
+        </div>
+
+        <div class="service-card">
+          <img src="images/workshops.jpg" alt="Workshops" loading="lazy" class="lightbox-img">
+          <h3>Workshops</h3>
+          <p>Join our hands-on barista and pastry workshops — learn, create, and have fun with us.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Luna Café | Crafted with love & coffee beans</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

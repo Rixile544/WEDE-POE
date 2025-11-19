@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna Café — Contact</title>
+  <meta name="description" content="Contact Luna Café: email, phone, location, or send us a message directly.">
+  <meta property="og:title" content="Luna Café — Contact">
+  <meta property="og:description" content="Contact Luna Café: email, phone, location, or send us a message directly.">
+  <meta property "og:image" content="images/logo.jpg">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://yourdomain.com/contact.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Luna Café</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href "about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> hello@lunacafe.com</p>
+      <p><strong>Phone:</strong> +27 12 345 6789</p>
+      <p><strong>Visit us at:</strong> 123 Earthy Lane, Johannesburg</p>
+    </div>
+
+    <div class="contact-container">
+      <form id="contact-form" data-endpoint="https://formspree.io/f/yourFormID">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <select name="type" aria-label="Message type">
+          <option value="General">General</option>
+          <option value="Catering">Catering</option>
+          <option value="Feedback">Feedback</option>
+        </select>
+        <textarea name="message" placeholder="Your message here..." rows="6" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.091733019776!2d28.047305415013157!3d-26.20410298344439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9509e8a7f5afcf%3A0xdea35fa1e3f65e1f!2sJohannesburg!5e0!3m2!1sen!2sza!4v1633532812345!5m2!1sen!2sza"
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Luna Café | Crafted with love & coffee beans</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Luna Café — Home</title>
+  <meta name="description" content="Luna Café in Johannesburg — artisan coffee, seasonal pastries, cozy ambiance.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* === 3D ORBIT STYLES === */
+    .orbit-section {
+      background-color: #f5ecdf; /* Beige background */
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .gallery-title {
+      font-size: 2.2rem;
+      font-style: italic;
+      color: #3b2f2f;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    .orbit-container {
+      position: relative;
+      width: 100%;
+      height: 420px; /* lowered a bit */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      background: #f5ecdf; /* Beige to match background */
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .orbit {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      transform-style: preserve-3d;
+      animation: spin 20s linear infinite;
+      transform: translateY(50px); /* Lower the orbit visuals */
+    }
+
+    .orbit img {
+      position: absolute;
+      width: 200px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    /* Positioning the 4 orbiting images */
+    .orbit img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+    .orbit img:nth-child(2) { transform: rotateY(90deg) translateZ(400px); }
+    .orbit img:nth-child(3) { transform: rotateY(180deg) translateZ(400px); }
+    .orbit img:nth-child(4) { transform: rotateY(270deg) translateZ(400px); }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg) translateY(50px); }
+      to { transform: rotateY(360deg) translateY(50px); }
+    }
+
+    /* Pause on hover */
+    .orbit-container:hover .orbit {
+      animation-play-state: paused;
+    }
+
+    /* Optional: make it responsive */
+    @media (max-width: 768px) {
+      .orbit {
+        width: 200px;
+        height: 200px;
+      }
+      .orbit img {
+        width: 140px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">Welcome to Luna Café — crafted with care</div>
+
+  <header>
+    <nav class="main-nav">
+      <div class="brand">
+        <div class="logo">Luna Café</div>
+        <div class="tagline">Earthy. Warm. Local.</div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-link" aria-label="View cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke="#3b2f2f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="hamburger" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Welcome to Luna Café</h1>
+        <p class="lead">We serve single-origin coffee, seasonal pastries and wholesome meals — all with an earthy, mindful touch.</p>
+        <div class="hero-ctas">
+          <a href="menu.html" class="btn primary">Explore Menu</a>
+          <a href="about.html" class="btn outline">Our Story</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight">
+            <strong>Locally Sourced</strong>
+            <span>We partner with local farmers</span>
+          </div>
+          <div class="highlight">
+            <strong>Daily Fresh</strong>
+            <span>Made every morning in-house</span>
+          </div>
+          <div class="highlight">
+            <strong>Community Hub</strong>
+            <span>Events, classes & collaborations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <img src="images/Signature Coffee.jpg" alt="Cup of coffee" class="hero-photo lightbox-img" loading="lazy">
+          <div class="hero-card-text">
+            <h3>Today’s Special</h3>
+            <p class="small">Honey Lavender Latte — R42</p>
+            <div class="card-actions">
+              <button class="btn add-sample" data-add-to-cart data-id="honey-lavender-latte" data-name="Honey Lavender Latte" data-price="42">Add to cart</button>
+              <a href="menu.html" class="btn outline">See full menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🌙 GALLERY / 3D IMAGE ORBIT START -->
+    <section class="orbit-section">
+      <h2 class="gallery-title"><em>GALLERY</em></h2>
+      <div class="orbit-container">
+        <div class="orbit">
+          <img src="images/Signature Coffee.jpg" alt="Coffee">
+          <img src="images/fresh pastries.jpg" alt="Pastries">
+          <img src="images/Garden Salad.jpg" alt="Salad">
+          <img src="images/Vanilla Latte.jpg" alt="Latte">
+        </div>
+      </div>
+    </section>
+    <!-- 🌙 GALLERY / 3D IMAGE ORBIT END -->
+
+    <!-- FEATURED / TRUST -->
+    <section class="featured section--padded">
+      <div class="feature-card">
+        <img src="images/Vanilla Latte.jpg" alt="Latte art" class="feature-photo lightbox-img" loading="lazy">
+        <h4>Expert Baristas</h4>
+        <p>Trained to coax flavor and texture from every roast.</p>
+      </div>
+      <div class="feature-card">
+        <img src="images/fresh pastries.jpg" alt="Fresh pastries" class="feature-photo lightbox-img" loading="lazy">
+        <h4>House-Baked Pastries</h4>
+        <p>Buttery, flaky, and rotated weekly with seasonal recipes.</p>
+      </div>
+      <div class="feature-card">
+        <img src="images/Garden Salad.jpg" alt="Fresh salad" class="feature-photo lightbox-img" loading="lazy">
+        <h4>Healthy Bowls & Sandwiches</h4>
+        <p>Sourced greens and honest ingredients, every day.</p>
+      </div>
+    </section>
+
+    <!-- MEET THE OWNER -->
+    <section class="owner section--padded">
+      <div class="owner-inner">
+        <div class="owner-photo-wrap">
+          <img src="images/Rixile.jpg" alt="Owner portrait" class="owner-photo" loading="lazy">
+        </div>
+        <div class="owner-bio">
+          <h3>Meet the Owner</h3>
+          <p class="small">Hello — welcome to Luna Café. I started this café to craft a space that feels like home: warm, earthy and full of flavour. We focus on seasonal produce, thoughtful coffee, and creating a place where the community can gather.</p>
+          <p><strong>Owner:</strong> <span class="owner-name">[Your name]</span></p>
+          <div class="owner-actions">
+            <a href="about.html" class="btn outline">Read Our Story</a>
+            <a href="contact.html" class="btn primary">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials section--padded">
+      <h3 class="text-center">What customers say</h3>
+      <div class="test-grid">
+        <blockquote class="testimonial">
+          <p>“Best coffee in town — rich, smooth and consistent every visit.”</p>
+          <cite>— Local Designer</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>“The pastries are outstanding and always fresh.”</p>
+          <cite>— Neighbourhood Regular</cite>
+        </blockquote>
+        <blockquote class="testimonial">
+          <p>“Lovely space for meetings and study — great wifi and vibes.”</p>
+          <cite>— Student</cite>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Luna Café</strong>
+        <div class="small">123 Earthy Lane, Johannesburg</div>
+      </div>
+      <div class="small">© 2025 Luna Café — crafted with love</div>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+
+  <!-- Optional: Add slight mouse-based rotation -->
+  <script>
+    const orbit = document.querySelector('.orbit');
+    let rotateY = 0;
+    window.addEventListener('mousemove', (e) => {
+      rotateY = e.clientX / 5;
+      orbit.style.transform = `rotateY(${rotateY}deg) translateY(50px)`;
+    });
+  </script>
+</body>
+</html>

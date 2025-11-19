@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Luna Café — Cart / Checkout</title>
+  <meta name="description" content="Your cart and checkout for Luna Café.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background-color: #f5efe6; color: #3b2f2f; font-family: 'Poppins', sans-serif; margin: 0; }
+    header, nav { background: #fffaf3; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    nav ul { list-style: none; display: flex; gap: 20px; padding: 0; margin: 0; }
+    nav ul li a { text-decoration: none; color: #3b2f2f; font-weight: 500; }
+    nav ul li a.active { color: #9c5846; text-decoration: underline; }
+    .cart-link { display: flex; align-items: center; gap: 5px; color: #3b2f2f; text-decoration: none; }
+    .cart-badge { background: #b36b57; color: white; border-radius: 50%; padding: 3px 8px; font-size: 0.8rem; }
+    main { padding: 20px; }
+    h2 { font-style: italic; color: #6b4226; margin-bottom: 10px; }
+    table.cart-table { width: 100%; border-collapse: collapse; margin-top: 15px; background: #fff; border-radius: 8px; overflow: hidden; }
+    table.cart-table th, table.cart-table td { border-bottom: 1px solid #d8cfc4; padding: 10px; text-align: left; }
+    table.cart-table th { background-color: #e7dccc; font-weight: bold; }
+    input.qty-input { width: 60px; text-align: center; }
+    button.remove-item { background: #b36b57; color: white; border: none; border-radius: 5px; padding: 6px 10px; cursor: pointer; }
+    button.remove-item:hover { background: #9c5846; }
+    #checkout-btn { background: #6b4226; color: white; padding: 10px 16px; border: none; border-radius: 6px; cursor: pointer; }
+    #checkout-btn:hover { background: #56351f; }
+    footer { margin-top: 40px; text-align: center; font-size: 0.9rem; color: #6b4226; padding: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Luna Café</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="cart.html" class="active">Cart</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="cart.html" class="cart-link"><span>Cart</span><span class="cart-badge">0</span></a>
+        <div class="hamburger">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Your Cart</h2>
+      <div id="cart-container"></div>
+    </section>
+
+    <section id="checkout-section" style="display:none;">
+      <h2>Checkout</h2>
+      <form id="checkout-form" class="form-section">
+        <input name="customerName" placeholder="Full name" required>
+        <input type="email" name="customerEmail" placeholder="Email" required>
+        <input name="customerPhone" placeholder="Phone" required>
+        <label class="small">Pickup or Delivery?</label>
+        <select name="fulfilment" required>
+          <option>Pickup</option>
+          <option>Delivery (+R30)</option>
+        </select>
+        <button id="checkout-btn" type="submit">Confirm & Place Order</button>
+      </form>
+    </section>
+
+    <section id="order-confirmation" style="display:none;text-align:center;">
+      <h2>Thank you!</h2>
+      <p>Your order has been received. (Demo confirmation — no payment processed.)</p>
+      <a href="menu.html" class="btn">Back to Menu</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Luna Café | Crafted with love & coffee beans</p>
+  </footer>
+
+  <script>
+    // --- CART PAGE SCRIPT ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('cart-container');
+      const checkoutSection = document.getElementById('checkout-section');
+      const confirmation = document.getElementById('order-confirmation');
+      const badge = document.querySelector('.cart-badge');
+
+      function getCart() {
+        return JSON.parse(localStorage.getItem('cart')) || [];
+      }
+
+      function saveCart(cart) {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        badge.textContent = cart.length;
+      }
+
+      function cartTotal(cart) {
+        return cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      }
+
+      function renderCart() {
+        const cart = getCart();
+
+        if (cart.length === 0) {
+          container.innerHTML = '<p>Your cart is empty. <a href="menu.html">Go to Menu</a>.</p>';
+          checkoutSection.style.display = 'none';
+          badge.textContent = '0';
+          return;
+        }
+
+        let html = `
+          <table class="cart-table">
+            <thead>
+              <tr><th>Item</th><th>Price</th><th>Qty</th><th>Total</th><th></th></tr>
+            </thead>
+            <tbody>`;
+        cart.forEach(item => {
+          html += `
+            <tr data-id="${item.id}">
+              <td>${item.name}</td>
+              <td>R${item.price.toFixed(2)}</td>
+              <td><input type="number" class="qty-input" min="1" value="${item.qty}"></td>
+              <td>R${(item.price * item.qty).toFixed(2)}</td>
+              <td><button class="remove-item">Remove</button></td>
+            </tr>`;
+        });
+        html += `</tbody></table>
+          <div style="text-align:right;margin-top:10px;">
+            <strong>Subtotal: R${cartTotal(cart).toFixed(2)}</strong>
+          </div>`;
+        container.innerHTML = html;
+        checkoutSection.style.display = 'block';
+        badge.textContent = cart.length;
+
+        // Handle qty changes
+        container.querySelectorAll('.qty-input').forEach(input => {
+          input.addEventListener('change', e => {
+            const row = e.target.closest('tr');
+            const id = row.getAttribute('data-id');
+            const qty = parseInt(e.target.value, 10);
+            const updated = getCart().map(it => it.id === id ? {...it, qty} : it);
+            saveCart(updated);
+            renderCart();
+          });
+        });
+
+        // Handle removals
+        container.querySelectorAll('.remove-item').forEach(btn => {
+          btn.addEventListener('click', e => {
+            const id = e.target.closest('tr').getAttribute('data-id');
+            const filtered = getCart().filter(it => it.id !== id);
+            saveCart(filtered);
+            renderCart();
+          });
+        });
+      }
+
+      // Checkout
+      document.getElementById('checkout-form').addEventListener('submit', e => {
+        e.preventDefault();
+        localStorage.removeItem('cart');
+        renderCart();
+        checkoutSection.style.display = 'none';
+        confirmation.style.display = 'block';
+      });
+
+      renderCart();
+    });
+  </script>
+</body>
+</html>

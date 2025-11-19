@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Luna Café — About</title>
+  <meta name="description" content="About Luna Café: mission, team, sustainability and community.">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Ensures vertical layout for about page images */
+    .about-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .about-images img {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .about-images img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (min-width: 768px) {
+      .about-images img {
+        width: 70%;
+      }
+    }
+
+    h2, h3 {
+      color: #4b2e05;
+    }
+
+    p {
+      color: #3c2a1a;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">Welcome to Luna Café</div>
+  <header>
+    <nav>
+      <div class="logo">Luna Café</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="cart.html" class="cart-link"><span>Cart</span><span class="cart-badge">0</span></a>
+        <div class="hamburger">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Luna Café</h2>
+      <p>Luna Café was founded with a love for earthy flavors, aromatic coffee, and cozy, welcoming spaces.</p>
+
+      <div class="about-images">
+        <img src="images/storefront.jpg" alt="Luna Café storefront" loading="lazy" class="lightbox-img">
+        <img src="images/cozy interior.jpg" alt="Cozy interior" loading="lazy" class="lightbox-img">
+      </div>
+
+      <h3>Our Mission</h3>
+      <p>To create a warm, inviting environment to enjoy wholesome food and great coffee.</p>
+
+      <div class="about-images">
+        <img src="images/baristas at work.jpg" alt="Baristas at work" loading="lazy" class="lightbox-img">
+        <img src="images/baristas making latte.jpg" alt="Barista pouring latte" loading="lazy" class="lightbox-img">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Luna Café | Crafted with love & coffee beans</p>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
